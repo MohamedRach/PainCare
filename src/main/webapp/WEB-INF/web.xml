@@ -23,6 +23,10 @@
         <servlet-name>painTest</servlet-name>
         <servlet-class>com.example.paincare.servlets.pain.painTest</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>blog</servlet-name>
+        <servlet-class>com.example.paincare.servlets.blogs.blog</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -42,5 +46,9 @@
     <servlet-mapping>
         <servlet-name>painTest</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>blog</servlet-name>
+        <url-pattern>/blog</url-pattern>
     </servlet-mapping>
 </web-app>
