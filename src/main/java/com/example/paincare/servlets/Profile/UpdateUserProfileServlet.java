@@ -81,7 +81,7 @@ public class UpdateUserProfileServlet extends HttpServlet {
         userToUpdate.setEmail(email);
 
         // Vérifier si un nouveau mot de passe est spécifié dans le formulaire
-        if (nouveauMotDePasse != null && !nouveauMotDePasse.isEmpty()) {
+        if (nouveauMotDePasse != null) {
             // Hacher le nouveau mot de passe
             String nouveauMotDePasseChiffre = this.auth.hash(nouveauMotDePasse.toCharArray());
             // Définir le mot de passe haché dans l'objet UserBean
