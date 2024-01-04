@@ -47,8 +47,9 @@ public class loginServlet extends HttpServlet {
                 boolean auth_success = this.auth.authenticate(password.toCharArray(), User.getPassword());
                 if(auth_success) {
                     HttpSession session = request.getSession();
-
+                    session.setAttribute("userId", User.getId());
                     session.setAttribute("email", email);
+
 
 
                     // Redirect to the /users page after successful creation
