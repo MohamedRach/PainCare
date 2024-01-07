@@ -24,6 +24,7 @@ public class painDaoImpl implements painDao{
         painBean.setLocation(resultSet.getString("location"));
         painBean.setPainWorse(resultSet.getString("painWorse"));
         painBean.setFeeling(resultSet.getString("feeling"));
+        painBean.setSymptoms(resultSet.getString("symptoms"));
         painBean.setCreated_at(resultSet.getDate("created_at"));
         painBean.setId_user(resultSet.getInt("id_user"));
 

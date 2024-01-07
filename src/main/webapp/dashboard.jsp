@@ -334,6 +334,6 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="assets/js/charts.js"></script>
-    <dash-chart data="<%= request.getAttribute("data")%>"></dash-chart>
+    <dash-chart data="<%= request.getAttribute("data")%>" data1="<%= request.getAttribute("data1")%>" data2="<%= request.getAttribute("data2")%>" data3="<%= request.getAttribute("data3")%>" data4="<%= request.getAttribute("data4")%>" data5="<%= request.getAttribute("data5")%>"></dash-chart>
 </body>
 </html>
