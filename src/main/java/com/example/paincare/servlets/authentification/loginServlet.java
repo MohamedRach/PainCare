@@ -49,9 +49,6 @@ public class loginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("userId", User.getId());
                     session.setAttribute("email", email);
-
-
-
                     // Redirect to the /users page after successful creation
                     response.sendRedirect(request.getContextPath() + "/dashboard");
                 } else {
