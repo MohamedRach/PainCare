@@ -16,7 +16,7 @@ public class painTestDaoImpl implements painTestDao{
 
     private testBean map(ResultSet resultSet ) throws SQLException {
         testBean testBean = new testBean();
-        testBean.setId(resultSet.getInt("id"));
+
         testBean.setResult(resultSet.getString("result"));
         testBean.setUser_id(resultSet.getInt("user_id"));
 
@@ -47,7 +47,7 @@ public class painTestDaoImpl implements painTestDao{
 
     @Override
     public testBean find(int user_id) throws DAOException {
-        final String SQL_QUERY = "SELECT result, user_id FROM test WHERE user_id = ? AND created_at = (SELECT MAX(created_at) FROM test)";
+        final String SQL_QUERY = "SELECT result, user_id FROM tests WHERE user_id = ? AND created_at = (SELECT MAX(created_at) FROM tests)";
         ResultSet resultSet = null;
         testBean testBean = null;
         try (Connection connexion = daoFacroty.getConnection();
