@@ -53,7 +53,7 @@ public class loginServlet extends HttpServlet {
 
 
                     // Redirect to the /users page after successful creation
-                    response.sendRedirect(request.getContextPath() + "/users");
+                    response.sendRedirect(request.getContextPath() + "/dashboard");
                 } else {
                     System.out.println("unauthorized");
                 }

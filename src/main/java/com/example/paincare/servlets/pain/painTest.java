@@ -16,7 +16,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "painTest", value = "/painTest")
-public class painTest extends HttpServlet {
+public class  painTest extends HttpServlet {
     private painTestDao painTestDao;
     public void init() {
         daoFacroty dao_Factory = daoFacroty.getInstance();
