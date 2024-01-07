@@ -28,6 +28,7 @@ public class blog extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/createBlog.jsp");
         dispatcher.forward(request, response);
     }
