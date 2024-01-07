@@ -43,6 +43,27 @@
         <servlet-name>painCare</servlet-name>
         <url-pattern>/pain</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateUserProfileServlet</servlet-name>
+        <servlet-class>com.example.paincare.servlets.Profile.UpdateUserProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateUserProfileServlet</servlet-name>
+        <url-pattern>/Update-user-profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.example.paincare.servlets.Profile.ProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/user-profile</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>painTest</servlet-name>
         <url-pattern>/test</url-pattern>
@@ -50,5 +71,6 @@
     <servlet-mapping>
         <servlet-name>blog</servlet-name>
         <url-pattern>/blog</url-pattern>
+
     </servlet-mapping>
 </web-app>

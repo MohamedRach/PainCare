@@ -1,13 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: DELL
-  Date: 1/6/2024
-  Time: 7:18 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +35,11 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
+    <script>
+        function redirectToUpdateProfile() {
+            window.location.href = "/Update-user-profile";
+        }
+    </script>
 </head>
 <body>
 <div class="layout-wrapper layout-content-navbar">
@@ -163,12 +159,11 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="user-profile"> <!-- Ajoutez l'URL de redirection -->
+                                    <a class="dropdown-item" href="#">
                                         <i class="bx bx-user me-2"></i>
                                         <span class="align-middle">My Profile</span>
                                     </a>
                                 </li>
-
                                 <li>
                                     <a class="dropdown-item" href="#">
                                         <i class="bx bx-cog me-2"></i>
@@ -177,11 +172,11 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">
-                          <span class="d-flex align-items-center align-middle">
-                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                            <span class="flex-grow-1 align-middle">Billing</span>
-                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                          </span>
+                              <span class="d-flex align-items-center align-middle">
+                                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                                <span class="flex-grow-1 align-middle">Billing</span>
+                                <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                              </span>
                                     </a>
                                 </li>
                                 <li>
@@ -201,138 +196,109 @@
             </nav>
             <div class="content-wrapper">
                 <!-- Content -->
+                <div class="formbold-main-wrapper">
+                    <!-- Author: FormBold Team -->
+                    <!-- Learn More: https://formbold.com -->
+                    <div class="formbold-form-wrapper">
+                        <div class="card mb-4 col-4 ml-4">
+                            <form action="/test" method="post">
+                                <div class="container-xxl flex-grow-1 container-p-y">
 
-                <div class="container-xxl flex-grow-1 container-p-y">
-                    <div class="row">
-                        <div class="col-lg-8 mb-4 order-0">
-                            <div class="card">
-                                <div class="d-flex align-items-end row">
-                                    <div class="col-sm-7">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                                            <p class="mb-4">
-                                                You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                                                your profile.
-                                            </p>
-
-                                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">Take another test</a>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-sm-5 text-center text-sm-left">
-                                        <div class="card-body">
-                                            <div id="growthChart"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                        <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                            <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Check the latest blogs</h5>
+                                    <c:if test="${not empty user}">
+                                        <div class="card mb-4">
+                                            <div class="card-header d-flex justify-content-between align-items-center">
+                                                <h5 class="mb-0">User Information</h5>
                                             </div>
-                                            <div class="mt-sm-auto">
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur expedita saepe sequi mollitia voluptates.</p>
+                                            <div class="card-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <th>Nom:</th>
+                                                        <td>${user.nom}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Prenom:</th>-
+                                                        <td>${user.prenom}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email:</th>
+                                                        <td>${user.email}</td>
+                                                    </tr>
+                                                    <!-- Add more fields as needed -->
+                                                </table>
+                                                <button type="button" class="btn btn-primary" onclick="redirectToUpdateProfile()">Modifier le profil</button>
                                             </div>
                                         </div>
-
-                                    </div>
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Take another test</a>
+                                    </c:if>
                                 </div>
 
-                            </div>
-                        </div>
+
+
+
+
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-8 mb-4 order-0">
-                            <div class="card">
-                                <div class="d-flex align-items-end row">
-                                    <div class="col-sm-7">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-primary">Pain Evolution</h5>
-                                            <div id="incomeChart"></div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 order-2 mb-4">
-                            <div class="card h-100">
-                                <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="card-title m-0 me-2">Transactions</h5>
-                                    <div class="dropdown">
-                                        <button
-                                                class="btn p-0"
-                                                type="button"
-                                                id="transactionID"
-                                                data-bs-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                        >
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="p-0 m-0 donutCharts">
-                                        <li class="d-flex">
-                                            <div class="orderStatisticsChart"></div>
-                                        </li>
-                                        <li class="d-flex">
-                                            <div class="orderStatisticsChart"></div>
-                                        </li>
-                                        <li class="d-flex">
-                                            <div class="orderStatisticsChart"></div>
-                                        </li>
-                                        <li class="d-flex">
-                                            <div class="orderStatisticsChart"></div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- / Navbar -->
-        </div>
-    </div>
-</div>
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="./assets/vendor/libs/popper/popper.js"></script>
-    <script src="./assets/vendor/js/bootstrap.js"></script>
-    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="./assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+                    <script>
+                        const totalSteps = 15;
+                        const formSubmitBtn = document.querySelector('.formbold-btn');
+                        const formBackBtn = document.querySelector('.formbold-back-btn');
+                        let currentStep = 1;
 
-    <!-- Vendors JS -->
-    <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
+                        formSubmitBtn.addEventListener("click", function (event) {
+                            console.log(currentStep)
+                            event.preventDefault();
 
-    <!-- Main JS -->
-    <script src="./assets/js/main.js"></script>
+                            const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
+                            console.log(currentStepForm)
+                            const nextStep = currentStep + 1;
 
-    <!-- Page JS -->
-    <script src="./assets/js/dashboards-analytics.js"></script>
+                            if (currentStep < totalSteps) {
+                                currentStepForm.classList.remove('active');
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+                                const nextStepForm = document.querySelector(".formbold-form-step-" + nextStep);
+                                console.log(nextStepForm)
+                                nextStepForm.classList.add('active');
+
+                                formBackBtn.classList.add('active');
+                                currentStep++;
+                                formSubmitBtn.textContent = (nextStep === totalSteps) ? 'Submit' : 'Next';
+                            } else {
+                                // You've reached the last step, submit the form
+                                document.querySelector('form').submit();
+                            }
+                        });
+
+                        formBackBtn.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            console.log(currentStep)
+                            const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
+                            const prevStep = currentStep - 1;
+
+                            if (currentStep > 2) {
+                                const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
+
+                                currentStepForm.classList.remove('active');
+                                prevStepForm.classList.add('active');
+                                currentStep--;
+
+
+                            } else {
+                                const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
+
+                                currentStepForm.classList.remove('active');
+                                prevStepForm.classList.add('active');
+                                currentStep--;
+                                formBackBtn.classList.remove('active');
+                                formSubmitBtn.textContent = 'Next';
+                            }
+                        });
+
+
+                    </script>
+
 </body>
 </html>
