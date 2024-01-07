@@ -107,10 +107,10 @@ public class userDaoImpl implements userDao {
 
     @Override
     public void update(userBean user) throws DAOException {
-        final String SQL_UPDATE = "UPDATE user SET nom = ?, prenom = ?, email = ? WHERE id = ?";
+        final String SQL_UPDATE = "UPDATE user SET nom = ?, prenom = ?, email = ?, password = ? WHERE id = ?";
 
         try (Connection connexion = daoFacroty.getConnection();
-             PreparedStatement preparedStatement = initRequestPrepare(connexion, SQL_UPDATE, user.getNom(), user.getPrenom(), user.getEmail(), user.getId())) {
+             PreparedStatement preparedStatement = initRequestPrepare(connexion, SQL_UPDATE, user.getNom(), user.getPrenom(), user.getEmail(), user.getPassword(), user.getId())) {
 
             int statut = preparedStatement.executeUpdate();
             if (statut == 0) {
@@ -120,6 +120,11 @@ public class userDaoImpl implements userDao {
             throw new DAOException("Erreur lors de la mise à jour de l'utilisateur.", e);
         }
     }
+
+
+
+
+
 
 
     @Override
