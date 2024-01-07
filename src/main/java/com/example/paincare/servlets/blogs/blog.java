@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import com.example.paincare.Bean.blogBean;
 import com.example.paincare.dao.blogs.blogDao;
 
@@ -28,7 +30,9 @@ public class blog extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/createBlog.jsp");
+        ArrayList<blogBean> blogs =dao.getBlogs();
+        request.setAttribute("blogs", blogs);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/blogs.jsp");
         dispatcher.forward(request, response);
     }
 
