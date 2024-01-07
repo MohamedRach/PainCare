@@ -1,5 +1,7 @@
 package com.example.paincare.Bean;
 
+import java.util.Date;
+
 public class painBean {
     private Integer id;
     private Integer level;
@@ -17,6 +19,15 @@ public class painBean {
     private String painWorse;
     private String feeling;
     private Integer id_user;
+    private Date created_at;
+
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
+    }
 
     public void setId(Integer id) {
         this.id = id;
