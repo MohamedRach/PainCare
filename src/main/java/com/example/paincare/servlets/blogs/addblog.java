@@ -15,9 +15,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import com.example.paincare.Bean.blogBean;
 import com.example.paincare.dao.blogs.blogDao;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "blog", value = "/blog")
-public class blog extends HttpServlet {
+public class addblog extends HttpServlet {
     private blogDao dao;
     private commentDao commentDao;
     public void init() {
@@ -34,12 +35,15 @@ public class blog extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId"); // Assurez-vous que "userId" est correctement défini dans votre application.
+        Integer blogId = (Integer) session.getAttribute("blogId"); // Assurez-vous que "blogId" est correctement défini dans votre application.
         if(request.getParameter("hidden") != null) {
             commentBean comment = new commentBean();
             String content = request.getParameter("comment");
             comment.setComment(content);
-            comment.setBlog_id(1);
-            comment.setUser_id(1);
+            comment.setBlog_id(blogId);
+            comment.setUser_id(userId);
             commentDao.create(comment);
 
         } else {
@@ -48,7 +52,7 @@ public class blog extends HttpServlet {
             String description = request.getParameter("description");
             blog.setTitle(title);
             blog.setDescription(description);
-            blog.setUser_id(1);
+            blog.setUser_id(userId);
             dao.create(blog);
         }
 

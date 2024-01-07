@@ -9,10 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
@@ -24,7 +21,6 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
@@ -45,14 +41,9 @@
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
         <!-- Menu -->
-
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-            <div class="app-brand demo">
-
-            </div>
-
+            <div class="app-brand demo"></div>
             <div class="menu-inner-shadow"></div>
-
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item active">
@@ -87,49 +78,29 @@
                         <i class='menu-icon tf-icons bx bx-log-out' ></i>
                     </a>
                 </li>
-
             </ul>
         </aside>
         <div class="layout-page">
             <!-- Navbar -->
-
-            <nav
-                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-                    id="layout-navbar"
-            >
+            <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
                 <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                     <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                         <i class="bx bx-menu bx-sm"></i>
                     </a>
                 </div>
-
                 <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                     <!-- Search -->
                     <div class="navbar-nav align-items-center">
                         <div class="nav-item d-flex align-items-center">
                             <i class="bx bx-search fs-4 lh-0"></i>
-                            <input
-                                    type="text"
-                                    class="form-control border-0 shadow-none"
-                                    placeholder="Search..."
-                                    aria-label="Search..."
-                            />
+                            <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
                         </div>
                     </div>
                     <!-- /Search -->
-
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
                         <!-- Place this tag where you want the button to render. -->
                         <li class="nav-item lh-1 me-3">
-                            <a
-                                    class="github-button"
-                                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                    data-icon="octicon-star"
-                                    data-size="large"
-                                    data-show-count="true"
-                                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
+                            <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
                         </li>
 
                         <!-- User -->
@@ -159,7 +130,7 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="user-profile"> <!-- Ajoutez l'URL de redirection -->
                                         <i class="bx bx-user me-2"></i>
                                         <span class="align-middle">My Profile</span>
                                     </a>
@@ -203,31 +174,56 @@
                         <!-- Navbar -->
                         <!-- Ajoutez ici le code de la barre de navigation si nécessaire -->
 
+                        <style>
+                            .form-group {
+                                display: flex;
+                                flex-direction: column;
+                                margin-bottom: 10px;
+                            }
+
+                            .form-group label {
+                                margin-bottom: 0; /* Remove margin-bottom for labels */
+                            }
+
+                            .form-group input,
+                            .form-group textarea {
+                                padding: 5px;
+                                margin: 0;
+                                box-sizing: border-box;
+                            }
+                        </style>
+
                         <div class="content-wrapper">
                             <!-- Content -->
-
                             <div class="container">
-                                <div class="col-md-8 offset-2 col-xm-8 col-sm-8 ">
+                                <div class="col-md-8 offset-2 col-xm-8 col-sm-8">
                                     <div class="card my-5">
                                         <div class="card-header">
                                             <span>Blog</span>
                                         </div>
                                         <div class="card-body">
                                             <form action="/blog" method="post">
-                                                <input name="title" placeholder="blog title">
-                                                <textarea id="w3review" name="description" rows="4" cols="50"></textarea>
-                                                <input type="submit" value="add blog">
-                                            </form>
+                                                <div class="form-group">
+                                                    <label for="blogTitle">Blog Title:</label>
+                                                    <input type="text" id="blogTitle" name="title" placeholder="Enter blog title">
+                                                </div>
 
-                                            <form action="/blog" method="post">
-                                                <input type="text" name="comment">
-                                                <input type="hidden" name="hidden" value="comment">
-                                                <input type="submit" value="add comment">
+                                                <div class="form-group">
+                                                    <label for="blogDescription">Blog Description:</label>
+                                                    <textarea id="blogDescription" name="description" rows="4" placeholder="Enter blog description"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="submit" value="Add Blog">
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+
 
                         </div>
 
@@ -290,9 +286,29 @@
                         formSubmitBtn.textContent = 'Next';
                     }
                 });
-
-
             </script>
 
+        </div>
+    </div>
+</div>
+<script src="./assets/vendor/libs/jquery/jquery.js"></script>
+<script src="./assets/vendor/libs/popper/popper.js"></script>
+<script src="./assets/vendor/js/bootstrap.js"></script>
+<script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="./assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+
+<!-- Page JS -->
+<!--<script src="./assets/js/dashboards-analytics.js"></script>-->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
