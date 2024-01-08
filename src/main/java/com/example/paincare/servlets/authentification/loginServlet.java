@@ -47,7 +47,7 @@ public class loginServlet extends HttpServlet {
                 boolean auth_success = this.auth.authenticate(password.toCharArray(), User.getPassword());
                 if(auth_success) {
                     HttpSession session = request.getSession();
-                    session.setAttribute("userId", User.getId());
+                    session.setAttribute("id", User.getId());
                     session.setAttribute("email", email);
 
 
@@ -55,7 +55,7 @@ public class loginServlet extends HttpServlet {
                     // Redirect to the /users page after successful creation
                     response.sendRedirect(request.getContextPath() + "/dashboard");
                 } else {
-                    System.out.println("unauthorized");
+                    response.sendRedirect(request.getContextPath() + "/login");
                 }
 
             } catch (DAOException e) {

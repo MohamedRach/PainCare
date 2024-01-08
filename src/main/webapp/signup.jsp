@@ -1,194 +1,178 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
 
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+-->
+<!-- beautify ignore:start -->
+<html
+        lang="en"
+        class="light-style customizer-hide"
+        dir="ltr"
+        data-theme="theme-default"
+        data-assets-path="../assets/"
+        data-template="vertical-menu-template-free"
+>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+  />
 
-    .container {
-      display: flex;
-      width: 800px;
-      height: 450px;
-      background-color: #ffffff;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-    }
+  <title>Sign up</title>
 
-    .left-side {
-      flex: 1;
-      padding: 16px;
-    }
+  <meta name="description" content="" />
 
-    .right-side {
-      flex: 1;
-      background: linear-gradient(to bottom, #fa889b, #eb95a8);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    .form-container {
-      width: 200px;
-      margin: 0 auto;
-    }
 
-    .left-side h1 {
-      text-align: center;
-      margin-bottom: 16px;
-    }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+  />
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
+  <!-- Icons. Uncomment required icon fonts -->
+  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
-    input {
-      margin-bottom: 16px;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: linear-gradient(to bottom, #c0ece8, #ffffff);
-    }
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
 
-    button {
-      padding: 8px;
-      color: #ffffff;
-      background-color: #eb95a8;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-    }
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    button:hover {
-      background-color: #a86bf4;
-    }
+  <!-- Page CSS -->
+  <!-- Page -->
+  <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
+  <!-- Helpers -->
+  <script src="../assets/vendor/js/helpers.js"></script>
 
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .signup {
-      max-width: 320px;
-      display: flex;
-      padding: 0.5rem 1.4rem;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      font-weight: 700;
-      text-align: center;
-      font-family: "Montserrat", sans-serif;
-      vertical-align: middle;
-      align-items: center;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      gap: 0.75rem;
-      color: black;
-      background-color: white;
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0, 0.87, 0.12, 1);
-      margin: 16px auto;
-    }
-
-    .signup:hover {
-      transform: scale(1.025);
-    }
-
-    .signup:active {
-      transform: scale(0.975);
-    }
-
-    .signup svg {
-      height: 24px;
-      width: auto;
-    }
-
-    .local-login-button {
-      width: 100px;
-      margin: 0 auto;
-    }
-
-    .registration-message {
-      text-align: center;
-      margin-top: 16px;
-    }
-
-  </style>
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="../assets/js/config.js"></script>
 </head>
 
 <body>
-<div class="container">
-  <div class="left-side">
-    <h1>Sign Up</h1>
-    <div class="form-container">
-      <form method="post" action="/signup">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="text" name="prenom" placeholder="Prenom" required>
-        <input type="text" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="hidden" value="normal" name="type">
-        <button type="submit" class="local-login-button">Sign up</button>
-      </form>
+<!-- Content -->
+
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+
+          <!-- /Logo -->
+          <h4 class="mb-2">Welcome to PainCare!</h4>
+          <p class="mb-4">Please sign-in to your account and start the adventure</p>
+
+          <form id="formAuthentication" class="mb-3" action="signup" method="POST">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Last name</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="nom"
+                      name="nom"
+                      placeholder="Enter your last name"
+                      autofocus
+              />
+            </div>
+            <div class="mb-3">
+              <label for="prenom" class="form-label">First name</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="prenom"
+                      name="prenom"
+                      placeholder="Enter your first name"
+                      autofocus
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email or username"
+                      autofocus
+              />
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Password</label>
+
+              </div>
+              <div class="input-group input-group-merge">
+                <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                        aria-describedby="password"
+                />
+                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+            </div>
+          </form>
+            <div class="mb-3">
+              <form action="login" method="post">
+                <input type="hidden" value="google" name="type">
+                <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
+              </form>
+
+            </div>
+
+
+
+        </div>
+      </div>
+      <!-- /Register -->
     </div>
-    <!-- Bouton Sign up with Google -->
-    <form action="login" method="post">
-      <input type="hidden" value="google" name="type">
-      <button type="submit" class="signup">
-        <svg
-                viewBox="0 0 256 262"
-                preserveAspectRatio="xMidYMid"
-                xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-                  d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
-                  fill="#4285F4"
-          ></path>
-          <path
-                  d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
-                  fill="#34A853"
-          ></path>
-          <path
-                  d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
-                  fill="#FBBC05"
-          ></path>
-          <path
-                  d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
-                  fill="#EB4335"
-          ></path>
-        </svg>
-        Sign up with Google
-      </button>
-    <!-- Message de connexion -->
-    <p class="registration-message">Vous avez un compte ? <a href="/login" style="color: blue;">Connectez-vous</a>.</p>
-  </div>
-  <div class="right-side">
-    <!-- Contenu à droite -->
-    <img src="../assets/img/elements/b.png" alt="Logo" width="250" height="250">
   </div>
 </div>
-</body>
 
+<!-- / Content -->
+
+
+
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
+
+<!-- Page JS -->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
 </html>

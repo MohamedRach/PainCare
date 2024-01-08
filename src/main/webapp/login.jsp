@@ -27,12 +27,12 @@
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Login </title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,12 +76,12 @@
                     <!-- Logo -->
 
                     <!-- /Logo -->
-                    <h4 class="mb-2">Welcome to PainCare! 👋</h4>
+                    <h4 class="mb-2">Welcome to PainCare!</h4>
                     <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
                     <form id="formAuthentication" class="mb-3" action="login" method="POST">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email or Username</label>
+                            <label for="email" class="form-label">Email</label>
                             <input
                                     type="text"
                                     class="form-control"
@@ -112,14 +112,18 @@
                         <div class="mb-3">
                             <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                         </div>
+                         </form>
                         <div class="mb-3">
-                            <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                            <form action="login" method="post">
+                                <input type="hidden" value="google" name="type">
+                                <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
+                            </form>
                         </div>
-                    </form>
+
 
                     <p class="text-center">
                         <span>New on our platform?</span>
-                        <a href="auth-register-basic.html">
+                        <a href="/signup">
                             <span>Create an account</span>
                         </a>
                     </p>
@@ -132,14 +136,7 @@
 
 <!-- / Content -->
 
-<div class="buy-now">
-    <a
-            href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-            target="_blank"
-            class="btn btn-danger btn-buy-now"
-    >Upgrade to Pro</a
-    >
-</div>
+
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->

@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -25,12 +26,19 @@ public class  painTest extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/painTest.jsp");
-        dispatcher.forward(request, response);
+        HttpSession session = request.getSession();
+
+        if(session.getAttribute("id") == null){
+            response.sendRedirect(request.getContextPath() + "/login");
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/painTest.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         float startPeriod =Float.parseFloat(request.getParameter("startPeriod"));
         float menstrualCycle =Float.parseFloat(request.getParameter("menstrualCycle"));
         float endometriosis =Float.parseFloat(request.getParameter("endometriosis"));
@@ -66,9 +74,10 @@ public class  painTest extends HttpServlet {
 
         testBean bean = new testBean();
         bean.setResult(result);
-        bean.setUser_id(1);
+        bean.setUser_id((int) session.getAttribute("id") );
 
         painTestDao.create(bean);
+        response.sendRedirect(request.getContextPath() + "/dashboard");
 
     }
 }

@@ -13,8 +13,8 @@
 
 <html>
 <head>
-  <title>Title</title>
-  <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+  <title>Blog</title>
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -150,7 +150,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="auth-login-basic.html">
+                  <a class="dropdown-item" href="/logout">
                     <i class="bx bx-power-off me-2"></i>
                     <span class="align-middle">Log Out</span>
                   </a>
@@ -206,7 +206,7 @@
 
                 <form action="/blog" method="post">
                   <input type="hidden" name="hidden" value="hhhhh">
-
+                  <input type="hidden" name="blogId" value="<%= blog.getId()%>">
                   <div class="input-group">
                     <input
                             type="text"
