@@ -38,6 +38,7 @@ public class blog extends HttpServlet {
         if(request.getParameter("id") != null){
             ArrayList<commentBean> comments = commentDao.comments(Integer.parseInt(request.getParameter("id")));
             blogBean blog = dao.find(Integer.parseInt(request.getParameter("id")));
+
             ArrayList<userBean> users = new ArrayList<>();
             for (commentBean comment: comments) {
                 ArrayList<Object> usersComments = new ArrayList<>();
@@ -48,12 +49,13 @@ public class blog extends HttpServlet {
 
             request.setAttribute("comments", comments);
             request.setAttribute("users", users);
+
+
             request.setAttribute("blog", blog);
             RequestDispatcher dispatcher = request.getRequestDispatcher("blog.jsp");
             dispatcher.forward(request, response);
         } else {
             ArrayList<blogBean> blogs = dao.getBlogs();
-
             request.setAttribute("blogs", blogs);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/blogs.jsp");
             dispatcher.forward(request, response);
