@@ -35,7 +35,7 @@
 <!-- header section start -->
 <div class="header_section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="logo"><a href="index.jsp"><img src="./assets/img/images_index/b_1.png"></a></div>
+        <div class="logo"><a href="index.jsp"><img src="./assets/img/images_index/alolo.jpg"></a></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
