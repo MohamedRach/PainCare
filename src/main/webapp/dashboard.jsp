@@ -44,6 +44,12 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
+    <style>
+        .col-lg-4 {
+            flex: 0 0 auto;
+            width: 30%;
+        }
+    </style>
 </head>
 <body>
 <div class="layout-wrapper layout-content-navbar">
@@ -60,43 +66,32 @@
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                    <a href="/dashboard" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     </a>
                 </li>
 
                 <!-- Layouts -->
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link ">
+                    <a href="/test" class="menu-link ">
                         <i class='menu-icon tf-icons bx bx-health'></i>
                     </a>
                 </li>
                 <li class="menu-item ">
-                    <a href="javascript:void(0);" class="menu-link ">
+                    <a href="/pain" class="menu-link ">
                         <i class='menu-icon tf-icons bx bxs-clinic'></i>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link ">
+                    <a href="/blog" class="menu-link ">
                         <i class='menu-icon tf-icons bx bxl-blogger' ></i>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link">
-                        <i class="menu-icon tf-icons bx bxs-user"></i>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link">
-                        <i class='menu-icon tf-icons bx bx-log-out' ></i>
-                    </a>
-                </li>
+
 
             </ul>
         </aside>
         <div class="layout-page">
-            <!-- Navbar -->
-
             <nav
                     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar"
@@ -110,37 +105,19 @@
                 <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                     <!-- Search -->
                     <div class="navbar-nav align-items-center">
-                        <div class="nav-item d-flex align-items-center">
-                            <i class="bx bx-search fs-4 lh-0"></i>
-                            <input
-                                    type="text"
-                                    class="form-control border-0 shadow-none"
-                                    placeholder="Search..."
-                                    aria-label="Search..."
-                            />
-                        </div>
+
                     </div>
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
                         <!-- Place this tag where you want the button to render. -->
-                        <li class="nav-item lh-1 me-3">
-                            <a
-                                    class="github-button"
-                                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                    data-icon="octicon-star"
-                                    data-size="large"
-                                    data-show-count="true"
-                                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
-                        </li>
+
 
                         <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <i class="menu-icon tf-icons bx bxs-user"></i>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -149,13 +126,10 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    <i class="menu-icon tf-icons bx bxs-user"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex-grow-1">
-                                                <span class="fw-semibold d-block">John Doe</span>
-                                                <small class="text-muted">Admin</small>
-                                            </div>
+
                                         </div>
                                     </a>
                                 </li>
@@ -167,25 +141,6 @@
                                         <i class="bx bx-user me-2"></i>
                                         <span class="align-middle">My Profile</span>
                                     </a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-cog me-2"></i>
-                                        <span class="align-middle">Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                          <span class="d-flex align-items-center align-middle">
-                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                            <span class="flex-grow-1 align-middle">Billing</span>
-                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                          </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="auth-login-basic.html">
@@ -209,13 +164,12 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                            <h5 class="card-title text-primary">Welcome Back! 🎉</h5>
                                             <p class="mb-4">
-                                                You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                                                your profile.
+                                                This is the result of your last test. Do you wanna know if you got better take another test
                                             </p>
 
-                                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">Take another test</a>
+                                            <a href="/test" class="btn btn-sm btn-outline-primary">Take another test</a>
                                         </div>
 
                                     </div>
@@ -234,15 +188,15 @@
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                                         <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Check the latest blogs</h5>
+                                                <h5 class="text-nowrap mb-2">Check the latest blogs from<br> the community</h5>
                                             </div>
                                             <div class="mt-sm-auto">
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur expedita saepe sequi mollitia voluptates.</p>
+                                                <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. Aspernatur expedita saepe sequi mollitia voluptates.</p>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Take another test</a>
+                                    <a href="/blog" class="btn btn-sm btn-outline-primary">Blogs</a>
                                 </div>
 
                             </div>
@@ -267,24 +221,7 @@
                         <div class="col-md-6 col-lg-4 order-2 mb-4">
                             <div class="card h-100">
                                 <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="card-title m-0 me-2">Transactions</h5>
-                                    <div class="dropdown">
-                                        <button
-                                                class="btn p-0"
-                                                type="button"
-                                                id="transactionID"
-                                                data-bs-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                        >
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                                        </div>
-                                    </div>
+                                    <h5 class="card-title m-0 me-2">Pain Statistics</h5>
                                 </div>
                                 <div class="card-body">
                                     <ul class="p-0 m-0 donutCharts">

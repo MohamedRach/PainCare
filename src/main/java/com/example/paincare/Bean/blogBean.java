@@ -8,6 +8,8 @@ public class blogBean {
     private String description;
     private Date created_at;
 
+
+
     private Integer user_id;
 
     public Integer getUser_id() {
