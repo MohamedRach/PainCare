@@ -11,8 +11,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.example.paincare.Bean.blogBean;
@@ -41,24 +44,16 @@ public class addblog extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId"); // Assurez-vous que "userId" est correctement défini dans votre application.
-        Integer blogId = (Integer) session.getAttribute("blogId"); // Assurez-vous que "blogId" est correctement défini dans votre application.
-        if(request.getParameter("hidden") != null) {
-            commentBean comment = new commentBean();
-            String content = request.getParameter("comment");
-            comment.setComment(content);
-            comment.setBlog_id(blogId);
-            comment.setUser_id(userId);
-            commentDao.create(comment);
 
-        } else {
             blogBean blog = new blogBean();
             String title = request.getParameter("title");
             String description = request.getParameter("description");
+
             blog.setTitle(title);
             blog.setDescription(description);
             blog.setUser_id(userId);
             dao.create(blog);
-        }
+
 
 
     }

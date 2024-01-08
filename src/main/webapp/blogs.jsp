@@ -66,38 +66,29 @@
 
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
-                <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                <li class="menu-item">
+                    <a href="/dashboard" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     </a>
                 </li>
 
                 <!-- Layouts -->
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link ">
+                    <a href="/test" class="menu-link ">
                         <i class='menu-icon tf-icons bx bx-health'></i>
                     </a>
                 </li>
                 <li class="menu-item ">
-                    <a href="javascript:void(0);" class="menu-link ">
+                    <a href="/pain" class="menu-link ">
                         <i class='menu-icon tf-icons bx bxs-clinic'></i>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link ">
+                <li class="menu-item active">
+                    <a href="/blog" class="menu-link ">
                         <i class='menu-icon tf-icons bx bxl-blogger' ></i>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link">
-                        <i class="menu-icon tf-icons bx bxs-user"></i>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link">
-                        <i class='menu-icon tf-icons bx bx-log-out' ></i>
-                    </a>
-                </li>
+
 
             </ul>
         </aside>
@@ -115,37 +106,19 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                 <!-- Search -->
                 <div class="navbar-nav align-items-center">
-                    <div class="nav-item d-flex align-items-center">
-                        <i class="bx bx-search fs-4 lh-0"></i>
-                        <input
-                                type="text"
-                                class="form-control border-0 shadow-none"
-                                placeholder="Search..."
-                                aria-label="Search..."
-                        />
-                    </div>
+
                 </div>
                 <!-- /Search -->
 
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                     <!-- Place this tag where you want the button to render. -->
-                    <li class="nav-item lh-1 me-3">
-                        <a
-                                class="github-button"
-                                href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                data-icon="octicon-star"
-                                data-size="large"
-                                data-show-count="true"
-                                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                        >Star</a
-                        >
-                    </li>
+
 
                     <!-- User -->
                     <li class="nav-item navbar-dropdown dropdown-user dropdown">
                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                             <div class="avatar avatar-online">
-                                <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                <i class="menu-icon tf-icons bx bxs-user"></i>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -154,13 +127,10 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar avatar-online">
-                                                <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                <i class="menu-icon tf-icons bx bxs-user"></i>
                                             </div>
                                         </div>
-                                        <div class="flex-grow-1">
-                                            <span class="fw-semibold d-block">John Doe</span>
-                                            <small class="text-muted">Admin</small>
-                                        </div>
+
                                     </div>
                                 </a>
                             </li>
@@ -172,25 +142,6 @@
                                     <i class="bx bx-user me-2"></i>
                                     <span class="align-middle">My Profile</span>
                                 </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="bx bx-cog me-2"></i>
-                                    <span class="align-middle">Settings</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                          <span class="d-flex align-items-center align-middle">
-                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                            <span class="flex-grow-1 align-middle">Billing</span>
-                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                          </span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="auth-login-basic.html">
@@ -215,7 +166,7 @@
                 %>
             <div class="blog">
                 <div class="card">
-                    <img class="card-img-top" src="../assets/img/elements/7.jpg" alt="Card image cap" />
+
                     <div class="card-body">
                         <h5 class="card-title"><%= blog.getTitle()%></h5>
                         <p class="card-text"><%= blog.getDescription().substring(0, 100)%>....</p>
@@ -236,5 +187,24 @@
         </div>
     </div>
 </div>
+<script src="./assets/vendor/libs/jquery/jquery.js"></script>
+<script src="./assets/vendor/libs/popper/popper.js"></script>
+<script src="./assets/vendor/js/bootstrap.js"></script>
+<script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="./assets/vendor/js/menu.js"></script>
+<script src="./assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+
+
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+
+<!-- Page JS -->
+<!--<script src="./assets/js/dashboards-analytics.js"></script>-->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

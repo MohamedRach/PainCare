@@ -20,6 +20,7 @@ public class blogDaoImpl implements blogDao{
         blogBean.setId(resultSet.getInt("id"));
         blogBean.setDescription(resultSet.getString("description"));
         blogBean.setTitle(resultSet.getString("title"));
+
         return blogBean;
     }
 
