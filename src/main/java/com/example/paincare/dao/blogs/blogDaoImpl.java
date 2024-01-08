@@ -62,8 +62,10 @@ public class blogDaoImpl implements blogDao{
              PreparedStatement preparedStatement = initRequestPrepare(connexion, SQL_QUERY,id)) {
 
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.first()) {
+
+            if (resultSet.next()) {
                 bean = map(resultSet);
+
             }
         } catch (SQLException e) {
             throw new DAOException(e);
