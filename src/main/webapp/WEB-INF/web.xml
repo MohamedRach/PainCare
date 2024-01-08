@@ -73,4 +73,13 @@
         <url-pattern>/blog</url-pattern>
 
     </servlet-mapping>
+    <servlet>
+        <servlet-name>addblog</servlet-name>
+        <servlet-class>com.example.paincare.servlets.blogs.addblog</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addblog</servlet-name>
+        <url-pattern>/addblog</url-pattern>
+
+    </servlet-mapping>
 </web-app>
