@@ -2,9 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+  <title>Profile</title>
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,44 +54,33 @@
 
       <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
-          <a href="index.html" class="menu-link">
+        <li class="menu-item">
+          <a href="/dashboard" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
           </a>
         </li>
 
         <!-- Layouts -->
         <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link ">
+          <a href="/test" class="menu-link ">
             <i class='menu-icon tf-icons bx bx-health'></i>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="javascript:void(0);" class="menu-link ">
+          <a href="/pain" class="menu-link ">
             <i class='menu-icon tf-icons bx bxs-clinic'></i>
           </a>
         </li>
         <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link ">
+          <a href="/blog" class="menu-link ">
             <i class='menu-icon tf-icons bx bxl-blogger' ></i>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link">
-            <i class="menu-icon tf-icons bx bxs-user"></i>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link">
-            <i class='menu-icon tf-icons bx bx-log-out' ></i>
-          </a>
-        </li>
+
 
       </ul>
     </aside>
     <div class="layout-page">
-      <!-- Navbar -->
-
       <nav
               class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
               id="layout-navbar"
@@ -106,37 +94,19 @@
         <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
           <!-- Search -->
           <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-              <i class="bx bx-search fs-4 lh-0"></i>
-              <input
-                      type="text"
-                      class="form-control border-0 shadow-none"
-                      placeholder="Search..."
-                      aria-label="Search..."
-              />
-            </div>
+
           </div>
           <!-- /Search -->
 
           <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- Place this tag where you want the button to render. -->
-            <li class="nav-item lh-1 me-3">
-              <a
-                      class="github-button"
-                      href="https://github.com/themeselection/sneat-html-admin-template-free"
-                      data-icon="octicon-star"
-                      data-size="large"
-                      data-show-count="true"
-                      aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-              >Star</a
-              >
-            </li>
+
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
               <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                 <div class="avatar avatar-online">
-                  <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  <i class="menu-icon tf-icons bx bxs-user"></i>
                 </div>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
@@ -145,13 +115,10 @@
                     <div class="d-flex">
                       <div class="flex-shrink-0 me-3">
                         <div class="avatar avatar-online">
-                          <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                          <i class="menu-icon tf-icons bx bxs-user"></i>
                         </div>
                       </div>
-                      <div class="flex-grow-1">
-                        <span class="fw-semibold d-block">John Doe</span>
-                        <small class="text-muted">Admin</small>
-                      </div>
+
                     </div>
                   </a>
                 </li>
@@ -159,31 +126,13 @@
                   <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="user-profile"> <!-- Ajoutez l'URL de redirection -->
                     <i class="bx bx-user me-2"></i>
                     <span class="align-middle">My Profile</span>
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bx bx-cog me-2"></i>
-                    <span class="align-middle">Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                              <span class="d-flex align-items-center align-middle">
-                                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                <span class="flex-grow-1 align-middle">Billing</span>
-                                <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                              </span>
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="auth-login-basic.html">
+                  <a class="dropdown-item" href="/logout">
                     <i class="bx bx-power-off me-2"></i>
                     <span class="align-middle">Log Out</span>
                   </a>
@@ -197,11 +146,11 @@
       <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
           <!-- Menu -->
-          <!-- Ajoutez ici le code du menu si nécessaire -->
+          <!-- Ajoutez ici le code du menu si nï¿½cessaire -->
 
           <div class="layout-page">
             <!-- Navbar -->
-            <!-- Ajoutez ici le code de la barre de navigation si nécessaire -->
+            <!-- Ajoutez ici le code de la barre de navigation si nï¿½cessaire -->
 
             <div class="content-wrapper">
               <!-- Content -->
@@ -220,19 +169,16 @@
                           <input class="form-control" name="nom" placeholder="Entrer le nom" value="${user.nom}">
                         </div>
                         <div class="form-group">
-                          <label class="label-control">Prénom :</label>
-                          <input class="form-control" name="prenom" placeholder="Entrer le prénom" value="${user.prenom}">
+                          <label class="label-control">Prï¿½nom :</label>
+                          <input class="form-control" name="prenom" placeholder="Entrer le prï¿½nom" value="${user.prenom}">
                         </div>
                         <div class="form-group">
                           <label class="label-control">E-mail :</label>
                           <input class="form-control" name="email" placeholder="Entrer l'e-mail" value="${user.email}">
                         </div>
-                        <div class="form-group">
-                          <label class="label-control">Mot de passe :</label>
-                          <input type="password" class="form-control" name="motDePasse" placeholder="">
-                        </div>
 
-                        <!-- Ajouter d'autres propriétés du profil au besoin -->
+
+                        <!-- Ajouter d'autres propriï¿½tï¿½s du profil au besoin -->
 
                         <button class="btn btn-primary" type="submit">Enregistrer</button>
                         <button  class="btn btn-primary" type="button" onclick="cancelAction()">Annuler</button>

@@ -31,7 +31,7 @@ public class UpdateUserProfileServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         // Récupérer l'ID de l'utilisateur à modifier
         HttpSession session = request.getSession();
-        Integer userId = (Integer) session.getAttribute("userId");
+        Integer userId = (Integer) session.getAttribute("id");
         System.out.println(userId);
 
         if (userId != null) {
@@ -56,8 +56,7 @@ public class UpdateUserProfileServlet extends HttpServlet {
                 response.getWriter().println("Erreur lors de la récupération de l'utilisateur");
             }
         } else {
-            // Gérer l'absence de paramètre userId
-            // ... (redirection, affichage d'un message d'erreur, etc.)
+            response.sendRedirect(request.getContextPath() + "/login");
         }
 
 
@@ -66,12 +65,12 @@ public class UpdateUserProfileServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         // Récupérer les données du formulaire
         HttpSession session = request.getSession();
-        Integer userId = (Integer) session.getAttribute("userId");
+        Integer userId = (Integer) session.getAttribute("id");
         System.out.println(userId);
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String email = request.getParameter("email");
-        String nouveauMotDePasse = request.getParameter("motDePasse");
+
 
         // Créer un objet UserBean avec les données du formulaire
         userBean userToUpdate = new userBean();
@@ -81,12 +80,7 @@ public class UpdateUserProfileServlet extends HttpServlet {
         userToUpdate.setEmail(email);
 
         // Vérifier si un nouveau mot de passe est spécifié dans le formulaire
-        if (nouveauMotDePasse != null ) {
-            // Hacher le nouveau mot de passe
-            String nouveauMotDePasseChiffre = this.auth.hash(nouveauMotDePasse.toCharArray());
-            // Définir le mot de passe haché dans l'objet UserBean
-            userToUpdate.setPassword(nouveauMotDePasseChiffre);
-        }
+
 
         try {
             // Mettre à jour l'utilisateur dans la base de données

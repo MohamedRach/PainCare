@@ -52,7 +52,7 @@
                     <a class="nav-link" href="news.jsp">News</a>
                 </li>
                 <li class="nav-item" style="margin-right: 80px;">
-                    <a class="nav-link" href="contact.jsp">Contact Us</a>
+                    <a class="nav-link" href="contact.jsp">Contact</a>
                 </li>
             </ul>
         </div>

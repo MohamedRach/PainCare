@@ -10,8 +10,8 @@
 <%@ page import="com.example.paincare.Bean.blogBean" %>
 <html>
 <head>
-    <title>Title</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+    <title>Blogs</title>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,7 +144,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="auth-login-basic.html">
+                                <a class="dropdown-item" href="/logout">
                                     <i class="bx bx-power-off me-2"></i>
                                     <span class="align-middle">Log Out</span>
                                 </a>

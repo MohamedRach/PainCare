@@ -329,7 +329,7 @@ class HelloWorld extends HTMLElement {
                 }
             }
         };
-        const data3 = this.changeArray(this.getAttribute("data3"), ["Anxious", "Depressed", "Dizzy", "Vomiting", "Diarrhea"])
+        const data3 = this.changeArray(this.getAttribute("data3"), ["Anxious", "Depressed", "Dizzy", "Vomiting", "diarrhea"])
         const orderChartConfig3 = {
             chart: {
                 height: 145,

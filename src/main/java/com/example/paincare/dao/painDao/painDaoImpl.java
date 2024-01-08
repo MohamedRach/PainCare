@@ -40,7 +40,7 @@ public class painDaoImpl implements painDao{
 
     @Override
     public ArrayList<painBean> getAllPains(int id) throws DAOException {
-        final String SQL_SELECT = "SELECT * FROM pain";
+        final String SQL_SELECT = "SELECT * FROM pain where id_user = ?";
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -49,7 +49,7 @@ public class painDaoImpl implements painDao{
         try {
             /* Récupération d'une connexion depuis la Factory */
             connexion = daoFacroty.getConnection();
-            preparedStatement = initRequestPrepare( connexion, SQL_SELECT);
+            preparedStatement = initRequestPrepare( connexion, SQL_SELECT, id);
             resultSet = preparedStatement.executeQuery();
             /* Parcours de la ligne de données de l'éventuel ResulSet retourné */
             while ( resultSet.next() ) {

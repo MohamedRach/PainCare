@@ -29,7 +29,7 @@ public class ProfileServlet extends HttpServlet {
         // Obtenir l'email et l'ID de l'utilisateur connecté depuis la session
         HttpSession session = request.getSession();
         String userEmail = (String) session.getAttribute("email");
-        int userId = (int) session.getAttribute("userId");
+        int userId = (int) session.getAttribute("id");
 
         if (userEmail != null && userId != 0) {
             try {

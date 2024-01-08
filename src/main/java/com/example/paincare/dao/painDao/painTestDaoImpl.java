@@ -16,8 +16,11 @@ public class painTestDaoImpl implements painTestDao{
 
     private testBean map(ResultSet resultSet ) throws SQLException {
         testBean testBean = new testBean();
-
-        testBean.setResult(resultSet.getString("result"));
+        if(resultSet.getString("result") == null){
+            testBean.setResult("null");
+        } else {
+            testBean.setResult(resultSet.getString("result"));
+        }
         testBean.setUser_id(resultSet.getInt("user_id"));
 
         return testBean;

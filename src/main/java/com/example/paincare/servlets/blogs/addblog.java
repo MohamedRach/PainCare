@@ -34,16 +34,22 @@ public class addblog extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<blogBean> blogs =dao.getBlogs();
-        request.setAttribute("blogs", blogs);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/addblog.jsp");
-        dispatcher.forward(request, response);
+        HttpSession session = request.getSession();
+
+        if(session.getAttribute("id") == null){
+            response.sendRedirect(request.getContextPath() + "/login");
+        } else {
+            ArrayList<blogBean> blogs = dao.getBlogs();
+            request.setAttribute("blogs", blogs);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/addblog.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Integer userId = (Integer) session.getAttribute("userId"); // Assurez-vous que "userId" est correctement défini dans votre application.
+        Integer userId = (Integer) session.getAttribute("id"); // Assurez-vous que "userId" est correctement défini dans votre application.
 
             blogBean blog = new blogBean();
             String title = request.getParameter("title");
@@ -53,6 +59,7 @@ public class addblog extends HttpServlet {
             blog.setDescription(description);
             blog.setUser_id(userId);
             dao.create(blog);
+            response.sendRedirect(request.getContextPath() + "/blog");
 
 
 

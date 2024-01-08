@@ -10,9 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -136,7 +136,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="auth-login-basic.html">
+                                    <a class="dropdown-item" href="/logout">
                                         <i class="bx bx-power-off me-2"></i>
                                         <span class="align-middle">Log Out</span>
                                     </a>
