@@ -203,6 +203,7 @@
                 </ul>
             </div>
         </nav>
+
             <div class="blogs">
                 <%
                     // Your array
@@ -220,7 +221,8 @@
                     </div>
 
                     <div class="card-body">
-                        <a href="javascript:void(0)" class="card-link">Read More</a>
+                        <a href="/blog?id=<%=blog.getId()%>">read more</a>
+
 
                     </div>
                 </div>
