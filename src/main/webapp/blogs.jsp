@@ -43,10 +43,11 @@
             column-gap: 50px;
             margin-left: 25px;
             flex-wrap: wrap;
+
         }
         .blog {
             margin-top: 20px;
-            width: 20%;
+            width: 30%;
         }
     </style>
 </head>

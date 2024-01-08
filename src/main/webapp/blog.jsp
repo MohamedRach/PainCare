@@ -9,6 +9,8 @@
 <%@ page import="com.example.paincare.Bean.blogBean" %>
 <%@ page import="com.example.paincare.Bean.commentBean" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.paincare.Bean.userBean" %>
+
 <html>
 <head>
   <title>Title</title>
@@ -54,6 +56,9 @@
 <body>
 <% blogBean blog = (blogBean) request.getAttribute("blog");%>
 <% ArrayList<commentBean> comments = (ArrayList<commentBean>) request.getAttribute("comments");%>
+<% ArrayList<userBean> users = (ArrayList<userBean>) request.getAttribute("users");%>
+
+
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
     <!-- Menu -->
@@ -227,13 +232,15 @@
 
 
             // Loop to display array elements
-            for (commentBean comment : comments) {
+
+            for (int i = 0;i<comments.size(); i++) {
+
           %>
           <div class="card mb-4">
             <div class="card-body">
-              <h5>Sadek Rachidi</h5>
+              <h5><%=users.get(i).getNom() + users.get(i).getPrenom()%></h5>
               <p class="card-text">
-                <%= comment.getComment()%>
+                <%= comments.get(i).getComment()%>
               </p>
             </div>
           </div>
