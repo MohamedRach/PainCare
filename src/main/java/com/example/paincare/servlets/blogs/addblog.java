@@ -28,11 +28,8 @@ import jakarta.servlet.http.HttpSession;
 @MultipartConfig
 public class addblog extends HttpServlet {
     private blogDao dao;
-
     private static final String WEB_CONTENT_DIR   = "C:/Users/User0/Desktop/projet jee/PainCare/src/main/webapp";
-
     private static final String BLOGS_IMAGES_DIR = "/posts/";
-
     private commentDao commentDao;
     public void init() {
         daoFacroty dao_Factory = daoFacroty.getInstance();
@@ -91,7 +88,6 @@ public class addblog extends HttpServlet {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("id"); // Assurez-vous que "userId" est correctement défini dans votre application.
 
-
         blogBean blog = new blogBean();
         String title = request.getParameter("title");
         Part image = request.getPart("image");
@@ -105,7 +101,6 @@ public class addblog extends HttpServlet {
         blog.setImageLink(imageLink);
         dao.create(blog);
         response.sendRedirect(request.getContextPath() + "/blog");
-
 
 
 
