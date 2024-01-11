@@ -49,6 +49,11 @@
             margin-top: 20px;
             width: 30%;
         }
+        .butt{ width:10%; color: white; margin-left: 29px; margin-top: 20px;}
+        .link {
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -155,7 +160,7 @@
                 </ul>
             </div>
         </nav>
-
+            <button class="btn btn-primary butt"><a class="link" href="/addblog">Add blog</a></button>
             <div class="blogs">
                 <%
                     // Your array
@@ -166,10 +171,19 @@
                 %>
             <div class="blog">
                 <div class="card">
+                    <img class="blog-image" src="./posts/1704563365382.png" alt="Blog Image">
 
                     <div class="card-body">
+
                         <h5 class="card-title"><%= blog.getTitle()%></h5>
-                        <p class="card-text"><%= blog.getDescription().substring(0, 100)%>....</p>
+
+
+                        <%
+                            String description = blog.getDescription();
+                            String truncatedDescription = (description.length() > 100) ? description.substring(0, 100) + "..." : description;
+                        %>
+                        <p class="card-text"><%= truncatedDescription %></p>
+
                     </div>
 
                     <div class="card-body">

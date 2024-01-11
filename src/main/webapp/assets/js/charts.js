@@ -136,7 +136,7 @@ class HelloWorld extends HTMLElement {
                     show: false
                 },
                 min: 0,
-                max: 20,
+                max: 10,
                 tickAmount: 4
             }
         };
