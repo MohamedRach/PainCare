@@ -32,7 +32,7 @@ Bien-être Féminin Connecté - Une application web dédiée à promouvoir la sa
 [MySQL](https://www.mysql.com/) est un système de gestion de base de données relationnelle open source largement utilisé. Il est reconnu pour sa fiabilité, sa scalabilité et ses performances. MySQL est un choix populaire pour stocker et gérer des données structurées dans diverses applications.
 
 ### Base de données
-![Local Image](../painCare/src/main/resources/images/bd.png)
+![Local Image](bd.png)
 
 ### Vidéo demonstartif
 
