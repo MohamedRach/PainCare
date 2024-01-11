@@ -148,7 +148,7 @@
                 </ul>
             </div>
         </nav>
-            <button class="btn btn-primary" style="width: 200px; margin: 30px 30px; "><a style="text-decoration: none; color: white;">Publish Blog</a></button>
+            <button class="btn btn-primary" style="width: 200px; margin: 30px 30px; "><a style="text-decoration: none; color: white;" href="/addblog">Publish Blog</a></button>
             <div class="blogs">
                 <%
                     // Your array
