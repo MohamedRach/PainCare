@@ -148,7 +148,7 @@
                 </ul>
             </div>
         </nav>
-
+            <button class="btn btn-primary" style="width: 200px; margin: 30px 30px; "><a style="text-decoration: none; color: white;">Publish Blog</a></button>
             <div class="blogs">
                 <%
                     // Your array
@@ -159,7 +159,7 @@
                 %>
             <div class="blog">
                 <div class="card">
-
+                    <img class="blog-image" src="<%= blog.getImageLink()%>" alt="Blog Image">
                     <div class="card-body">
                         <h5 class="card-title"><%= blog.getTitle()%></h5>
                         <p class="card-text"><%= blog.getDescription().substring(0, 100)%>....</p>
@@ -172,6 +172,9 @@
                     </div>
                 </div>
             </div>
+                <script>
+                    console.log("<%= blog.getImageLink()%>")
+                </script>
              <% }%>
 
 
@@ -180,6 +183,7 @@
         </div>
     </div>
 </div>
+
 <script src="./assets/vendor/js/menu.js"></script>
 <script src="./assets/vendor/js/bootstrap.js"></script>
 </body>

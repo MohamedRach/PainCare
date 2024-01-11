@@ -162,7 +162,7 @@
           <div>
 
             <div class="card mb-4">
-
+              <img class="blog-image" src="<%= blog.getImageLink()%>" alt="Blog Image">
               <div class="card-body">
                 <h3><%= blog.getTitle()%></h3>
                 <p class="card-text">

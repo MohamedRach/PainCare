@@ -20,6 +20,7 @@ public class blogDaoImpl implements blogDao{
         blogBean.setId(resultSet.getInt("id"));
         blogBean.setDescription(resultSet.getString("description"));
         blogBean.setTitle(resultSet.getString("title"));
+        blogBean.setImageLink(resultSet.getString("imageLink"));
 
         return blogBean;
     }
@@ -76,10 +77,10 @@ public class blogDaoImpl implements blogDao{
 
     @Override
     public void create(blogBean blog) throws DAOException {
-        final String SQL_INSERT = "INSERT INTO blogs (title,description, user_id) VALUES (?,?, ?)";
+        final String SQL_INSERT = "INSERT INTO blogs (title,description, user_id,imageLink ) VALUES (?,?, ? ,?)";
 
         try (Connection connexion = daoFacroty.getConnection();
-             PreparedStatement preparedStatement = initRequestPrepare(connexion, SQL_INSERT,blog.getTitle(), blog.getDescription(), blog.getUser_id())) {
+             PreparedStatement preparedStatement = initRequestPrepare(connexion, SQL_INSERT,blog.getTitle(), blog.getDescription(), blog.getUser_id(),blog.getImageLink())) {
 
             int statut = preparedStatement.executeUpdate();
             if (statut == 0) {
