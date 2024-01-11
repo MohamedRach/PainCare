@@ -22,15 +22,9 @@
     <link rel="stylesheet" href="./assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/demo.css" />
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
 
-    <!-- Page CSS -->
 
-    <!-- Helpers -->
-    <script src="./assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -179,7 +173,7 @@
                                 <div class="col-md-8 offset-2 col-xm-8 col-sm-8">
                                     <div class="card my-5">
                                         <div class="card-header">
-                                            <span>Test du douleur</span>
+                                            <span>Add pain</span>
                                         </div>
                                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                             <form action="pain" method="post">
@@ -244,40 +238,7 @@
                                                 </div>
                                             </form>
 
-                                            <script>
-                                                var slider = document.getElementById("myRange");
-                                                var output = document.getElementById("demo");
-                                                var value;
 
-                                                if (slider.value == 0) {
-                                                    value = "None"
-                                                } else if (slider.value > 0 && slider.value <= 3) {
-                                                    value = "Mid"
-                                                } else if (slider.value > 3 && slider.value <= 5) {
-                                                    value = "Moderate"
-                                                } else if (slider.value > 5 && slider.value <= 7) {
-                                                    value = "Severe"
-                                                } else if (slider.value > 7) {
-                                                    value = "Very Severe"
-                                                }
-
-                                                output.innerHTML = value;
-
-                                                slider.oninput = function () {
-                                                    if (slider.value == 0) {
-                                                        value = "None"
-                                                    } else if (slider.value > 0 && slider.value <= 3) {
-                                                        value = "Mid"
-                                                    } else if (slider.value > 3 && slider.value <= 5) {
-                                                        value = "Moderate"
-                                                    } else if (slider.value > 5 && slider.value <= 7) {
-                                                        value = "Severe"
-                                                    } else if (slider.value > 7) {
-                                                        value = "Very Severe"
-                                                    }
-                                                    output.innerHTML = value;
-                                                }
-                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -287,66 +248,44 @@
                         </div>
                 </div>
             </div>
+                <script>
+                    var slider = document.getElementById("myRange");
+                    var output = document.getElementById("demo");
+                    var value;
 
-
-            <script>
-                const totalSteps = 15;
-                const formSubmitBtn = document.querySelector('.formbold-btn');
-                const formBackBtn = document.querySelector('.formbold-back-btn');
-                let currentStep = 1;
-
-                formSubmitBtn.addEventListener("click", function (event) {
-                    console.log(currentStep)
-                    event.preventDefault();
-
-                    const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
-                    console.log(currentStepForm)
-                    const nextStep = currentStep + 1;
-
-                    if (currentStep < totalSteps) {
-                        currentStepForm.classList.remove('active');
-
-                        const nextStepForm = document.querySelector(".formbold-form-step-" + nextStep);
-                        console.log(nextStepForm)
-                        nextStepForm.classList.add('active');
-
-                        formBackBtn.classList.add('active');
-                        currentStep++;
-                        formSubmitBtn.textContent = (nextStep === totalSteps) ? 'Submit' : 'Next';
-                    } else {
-                        // You've reached the last step, submit the form
-                        document.querySelector('form').submit();
+                    if (slider.value == 0) {
+                        value = "None"
+                    } else if (slider.value > 0 && slider.value <= 3) {
+                        value = "Mid"
+                    } else if (slider.value > 3 && slider.value <= 5) {
+                        value = "Moderate"
+                    } else if (slider.value > 5 && slider.value <= 7) {
+                        value = "Severe"
+                    } else if (slider.value > 7) {
+                        value = "Very Severe"
                     }
-                });
 
-                formBackBtn.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    console.log(currentStep)
-                    const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
-                    const prevStep = currentStep - 1;
+                    output.innerHTML = value;
 
-                    if (currentStep > 2) {
-                        const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
-
-                        currentStepForm.classList.remove('active');
-                        prevStepForm.classList.add('active');
-                        currentStep--;
-
-
-                    } else {
-                        const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
-
-                        currentStepForm.classList.remove('active');
-                        prevStepForm.classList.add('active');
-                        currentStep--;
-                        formBackBtn.classList.remove('active');
-                        formSubmitBtn.textContent = 'Next';
+                    slider.oninput = function () {
+                        if (slider.value == 0) {
+                            value = "None"
+                        } else if (slider.value > 0 && slider.value <= 3) {
+                            value = "Mid"
+                        } else if (slider.value > 3 && slider.value <= 5) {
+                            value = "Moderate"
+                        } else if (slider.value > 5 && slider.value <= 7) {
+                            value = "Severe"
+                        } else if (slider.value > 7) {
+                            value = "Very Severe"
+                        }
+                        output.innerHTML = value;
                     }
-                });
+                </script>
 
 
-            </script>
-
+                <script src="./assets/vendor/js/menu.js"></script>
+                <script src="./assets/vendor/js/bootstrap.js"></script>
 </body>
 
 </html>

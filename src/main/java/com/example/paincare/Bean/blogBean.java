@@ -7,7 +7,7 @@ public class blogBean {
     private String title;
     private String description;
     private Date created_at;
-
+    private String imageLink;
 
 
     private Integer user_id;
@@ -51,4 +51,14 @@ public class blogBean {
     public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
+    // Getter pour imageLink
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    // Setter pour imageLink
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
 }

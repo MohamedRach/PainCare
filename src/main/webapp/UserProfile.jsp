@@ -21,24 +21,11 @@
     <link rel="stylesheet" href="./assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/demo.css" />
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="./assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
-    <script>
-        function redirectToUpdateProfile() {
-            window.location.href = "/Update-user-profile";
-        }
-    </script>
 </head>
 <body>
 <div class="layout-wrapper layout-content-navbar">
@@ -174,7 +161,7 @@
                                                     </tr>
                                                     <!-- Add more fields as needed -->
                                                 </table>
-                                                <button type="button" class="btn btn-primary" onclick="redirectToUpdateProfile()">Modifier le profil</button>
+                                                <button type="button" class="btn btn-primary" ><a style="text-decoration: none; color: white" href="/Update-user-profile">Modifier le profil</a></button>
                                             </div>
                                         </div>
                                     </c:if>
@@ -191,63 +178,8 @@
             </div>
 
 
-                    <script>
-                        const totalSteps = 15;
-                        const formSubmitBtn = document.querySelector('.formbold-btn');
-                        const formBackBtn = document.querySelector('.formbold-back-btn');
-                        let currentStep = 1;
-
-                        formSubmitBtn.addEventListener("click", function (event) {
-                            console.log(currentStep)
-                            event.preventDefault();
-
-                            const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
-                            console.log(currentStepForm)
-                            const nextStep = currentStep + 1;
-
-                            if (currentStep < totalSteps) {
-                                currentStepForm.classList.remove('active');
-
-                                const nextStepForm = document.querySelector(".formbold-form-step-" + nextStep);
-                                console.log(nextStepForm)
-                                nextStepForm.classList.add('active');
-
-                                formBackBtn.classList.add('active');
-                                currentStep++;
-                                formSubmitBtn.textContent = (nextStep === totalSteps) ? 'Submit' : 'Next';
-                            } else {
-                                // You've reached the last step, submit the form
-                                document.querySelector('form').submit();
-                            }
-                        });
-
-                        formBackBtn.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            console.log(currentStep)
-                            const currentStepForm = document.querySelector(".formbold-form-step-" + currentStep);
-                            const prevStep = currentStep - 1;
-
-                            if (currentStep > 2) {
-                                const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
-
-                                currentStepForm.classList.remove('active');
-                                prevStepForm.classList.add('active');
-                                currentStep--;
-
-
-                            } else {
-                                const prevStepForm = document.querySelector(".formbold-form-step-" + prevStep);
-
-                                currentStepForm.classList.remove('active');
-                                prevStepForm.classList.add('active');
-                                currentStep--;
-                                formBackBtn.classList.remove('active');
-                                formSubmitBtn.textContent = 'Next';
-                            }
-                        });
-
-
-                    </script>
+            <script src="./assets/vendor/js/menu.js"></script>
+            <script src="./assets/vendor/js/bootstrap.js"></script>
 
 </body>
 </html>

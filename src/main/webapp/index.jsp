@@ -89,21 +89,8 @@
 <!-- health section start -->
 </div>
 </div>
-<!-- footer section end -->
-<!-- copyright section start -->
-<!-- copyright section end -->
-<!-- Javascript files-->
-<script src="/assets/js/js_index/jquery.min.js"></script>
-<script src="/assets/js/js_index/popper.min.js"></script>
-<script src="/assets/js/js_index/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/js_index/jquery-3.0.0.min.js"></script>
-<script src="/assets/js/js_index/plugin.js"></script>
-<!-- sidebar -->
-<script src="/assets/js/js_index/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="/assets/js/js_index/custom.js"></script>
-<!-- javascript -->
-<script src="/assets/js/js_index/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
 </body>
 
 </html>
