@@ -61,4 +61,7 @@ public class blogBean {
         this.imageLink = imageLink;
     }
 
+
 }
+
+
