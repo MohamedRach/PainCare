@@ -36,6 +36,21 @@
       window.location.href = "/Update-user-profile";
     }
   </script>
+  <script>
+    function previewImage() {
+      var input = document.getElementById('image');
+      var preview = document.getElementById('imagePreview');
+      var file = input.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      };
+
+      reader.readAsDataURL(file);
+    }
+  </script>
   <style>
     .form-group {
       display: flex;
@@ -177,16 +192,23 @@
                       <span>Blog</span>
                     </div>
                     <div class="card-body">
-                      <form action="addblog" method="post" enctype="multipart/form-data">
+                      <form action="addblog" method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                           <label for="blogTitle">Blog Title:</label>
-                          <input type="text" id="blogTitle" name="title" placeholder="Enter blog title">
+                          <input type="text" id="blogTitle" name="title" placeholder="Enter blog title" required>
                         </div>
 
                         <div class="form-group">
                           <label for="blogDescription">Blog Description:</label>
-                          <textarea id="blogDescription" name="description" rows="4" placeholder="Enter blog description"></textarea>
+                          <textarea id="blogDescription" name="description" rows="4" placeholder="Enter blog description" required></textarea>
                         </div>
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage()">
+                        <br>
+
+                        <img id="imagePreview" src="#" alt="Aper�u de l'image" style="display: none;">
+                        <br>
+
 
                         <div class="form-group">
                           <input type="submit" value="Add Blog">

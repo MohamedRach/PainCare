@@ -189,7 +189,7 @@
           %>
           <div class="card mb-4">
             <div class="card-body">
-              <h5><%=users.get(i).getNom() + users.get(i).getPrenom()%></h5>
+              <h5><%=users.get(i).getNom() + " " + users.get(i).getPrenom()%></h5>
               <p class="card-text">
                 <%= comments.get(i).getComment()%>
               </p>
