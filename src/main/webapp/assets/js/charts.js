@@ -21,7 +21,7 @@ class HelloWorld extends HTMLElement {
             // Change values different than 0 to represent the percentage
             for (var i = 0; i < inputArray.length; i++) {
                 if (inputArray[i] !== 0) {
-                    inputArray[i] = (inputArray[i]/nonZeroCount)*100;
+                    inputArray[i] = Math.round((inputArray[i]/nonZeroCount)*100);
                 }
             }
             var nonZeroValues = inputArray.filter((value) => value !== 0);
@@ -285,8 +285,8 @@ class HelloWorld extends HTMLElement {
             },
             dataLabels: {
                 enabled: false,
-                formatter: function (val, opt) {
-                    return parseInt(val) + '%';
+                formatter: function (val) {
+                    return Math.round(+val) + '%';
                 }
             },
             legend: {
@@ -311,7 +311,7 @@ class HelloWorld extends HTMLElement {
                                 color: headingColor,
                                 offsetY: -15,
                                 formatter: function (val) {
-                                    return parseInt(val) + '%';
+                                    return Math.round(val) + '%';
                                 }
                             },
                             name: {
@@ -323,6 +323,7 @@ class HelloWorld extends HTMLElement {
                                 fontSize: '0.75rem',
                                 color: axisColor,
                                 label: 'Pain worse',
+
                             }
                         }
                     }
@@ -345,8 +346,8 @@ class HelloWorld extends HTMLElement {
             },
             dataLabels: {
                 enabled: false,
-                formatter: function (val, opt) {
-                    return parseInt(val) + '%';
+                formatter: function (val) {
+                    return Math.round(parseInt(val)) + '%';
                 }
             },
             legend: {
@@ -371,7 +372,7 @@ class HelloWorld extends HTMLElement {
                                 color: headingColor,
                                 offsetY: -15,
                                 formatter: function (val) {
-                                    return parseInt(val) + '%';
+                                    return Math.round(parseInt(val)) + '%';
                                 }
                             },
                             name: {
@@ -383,6 +384,8 @@ class HelloWorld extends HTMLElement {
                                 fontSize: '0.75rem',
                                 color: axisColor,
                                 label: 'Feelings',
+
+
                             }
                         }
                     }
