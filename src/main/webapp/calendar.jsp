@@ -1,13 +1,12 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.paincare.Bean.blogBean" %>
-<%@ page import="com.example.paincare.Bean.commentBean" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.paincare.Bean.userBean" %>
 
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Favicon -->
 
 
   <!-- Fonts -->
@@ -20,35 +19,38 @@
 
   <!-- Icons. Uncomment required icon fonts -->
   <link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
-
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
   <!-- Core CSS -->
   <link rel="stylesheet" href="./assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="./assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="./assets/css/demo.css" />
+  <link rel="stylesheet" href="./assets/vendor/css/calendar.css" />
 
 
+
+  <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
+
+  <!-- Page CSS -->
+
+
+
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
   <style>
-
-    .blog {
-      margin-top: 20px;
-      width: 1000px;
-      margin-left: 30px;
-    }
-    .img {
-      height: 200px;
-      width: 500px;
-      margin-left: 270px;
+    .col-lg-4 {
+      flex: 0 0 auto;
+      width: 30%;
     }
   </style>
 </head>
 <body>
-<% blogBean blog = (blogBean) request.getAttribute("blog");%>
-<% ArrayList<commentBean> comments = (ArrayList<commentBean>) request.getAttribute("comments");%>
-<% ArrayList<userBean> users = (ArrayList<userBean>) request.getAttribute("users");%>
-
-
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
     <!-- Menu -->
@@ -62,7 +64,7 @@
 
       <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item">
+        <li class="menu-item active">
           <a href="/dashboard" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
           </a>
@@ -79,7 +81,7 @@
             <i class='menu-icon tf-icons bx bxs-clinic'></i>
           </a>
         </li>
-        <li class="menu-item active">
+        <li class="menu-item">
           <a href="/blog" class="menu-link ">
             <i class='menu-icon tf-icons bx bxl-blogger' ></i>
           </a>
@@ -151,80 +153,106 @@
           </ul>
         </div>
       </nav>
-
-        <div class="blog">
-          <div>
-
-            <div class="card mb-4">
-              <img class="blog-image" src="<%= blog.getImageLink()%>" alt="Blog Image">
-              <div class="card-body">
-                <h3><%= blog.getTitle()%></h3>
-                <p class="card-text">
-                  <%= blog.getDescription()%>
-                </p>
+      <div class="content-wrapper">
+        <!-- Content -->
+        <div class="container">
+          <div class="left">
+            <div class="calendar">
+              <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">december 2015</div>
+                <i class="fas fa-angle-right next"></i>
+              </div>
+              <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="days"></div>
+              <div class="goto-today">
+                <div class="goto">
+                  <input type="text" placeholder="mm/yyyy" class="date-input" />
+                  <button class="goto-btn">Go</button>
+                </div>
+                <button class="today-btn">Today</button>
               </div>
             </div>
           </div>
-        </div>
-      <div class="blog">
-        <div>
-          <%
-            // Your array
-
-
-            // Loop to display array elements
-
-            for (int i = 0;i<comments.size(); i++) {
-
-          %>
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5><%=users.get(i).getNom() + " " + users.get(i).getPrenom()%></h5>
-              <p class="card-text">
-                <%= comments.get(i).getComment()%>
-              </p>
+          <div class="right">
+            <div class="today-date">
+              <div class="event-day">wed</div>
+              <div class="event-date">12th december 2022</div>
             </div>
-          </div>
-          <% } %>
-        </div>
-      </div>
-      <div class="blog">
-        <div>
-
-          <div class="card mb-4">
-            <div class="card-body">
-
-                <form action="/blog" method="post">
-                  <input type="hidden" name="hidden" value="hhhhh">
-                  <input type="hidden" name="blogId" value="<%= blog.getId()%>">
-                  <div class="input-group">
-                    <input
-                            type="text"
-                            class="form-control"
-                            name="comment"
-                            placeholder="add comment"
-                            aria-label="Recipient's username"
-                            aria-describedby="button-addon2"
-                    />
-                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Add</button>
+            <div class="events"></div>
+            <div class="add-event-wrapper">
+              <div class="add-event-header">
+                <div class="title">Add Event</div>
+                <i class="fas fa-times close"></i>
+              </div>
+              <div class="add-event-body">
+                <form onsubmit="submitForm()">
+                <div class="add-event-input">
+                  <input type="text" placeholder="Event Name" class="event-name" name="eventName" />
+                </div>
+                <div class="add-event-input">
+                  <input
+                          type="text"
+                          placeholder="Event Time From"
+                          class="event-time-from"
+                          name="timeFrom"
+                  />
+                </div>
+                <div class="add-event-input">
+                  <input
+                          type="text"
+                          placeholder="Event Time To"
+                          class="event-time-to"
+                          name="timeTo"
+                  />
+                </div>
+                  <div class="add-event-footer">
+                    <button type="submit" class="add-event-btn">Add Event</button>
                   </div>
                 </form>
+              </div>
 
             </div>
           </div>
-
+          <button class="add-event">
+            Add Event
+          </button>
         </div>
-      </div>
 
-
-
+        <script src="script.js"></script>
 
       </div>
+
+
     </div>
   </div>
 </div>
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+
+<script src="./assets/vendor/js/bootstrap.js"></script>
 
 <script src="./assets/vendor/js/menu.js"></script>
-<script src="./assets/vendor/js/bootstrap.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/script.js"></script>
+<!-- Page JS -->
+<!--<script src="./assets/js/dashboards-analytics.js"></script>-->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 </body>
 </html>
