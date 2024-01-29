@@ -69,7 +69,7 @@
 
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner">
+        <div class="authentication-inner" style="width: 40%; position: absolute;left: 30%;">
             <!-- Register -->
             <div class="card">
                 <div class="card-body">
@@ -77,7 +77,7 @@
 
                     <!-- /Logo -->
                     <h4 class="mb-2">Welcome to PainCare!</h4>
-                    <p class="mb-4">Please sign-in to your account and start the adventure</p>
+                    <p class="mb-4">Please log-in to your account and start the adventure</p>
 
                     <form id="formAuthentication" class="mb-3" action="login" method="POST">
                         <div class="mb-3">
@@ -112,13 +112,13 @@
                         <div class="mb-3">
                             <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                         </div>
-                         </form>
-                        <div class="mb-3">
-                            <form action="login" method="post">
-                                <input type="hidden" value="google" name="type">
-                                <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
-                            </form>
-                        </div>
+                    </form>
+                    <div class="mb-3">
+                        <form action="login" method="post">
+                            <input type="hidden" value="google" name="type">
+                            <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
+                        </form>
+                    </div>
 
 
                     <p class="text-center">

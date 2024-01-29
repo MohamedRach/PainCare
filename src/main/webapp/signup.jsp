@@ -68,7 +68,7 @@
 
 <div class="container-xxl">
   <div class="authentication-wrapper authentication-basic container-p-y">
-    <div class="authentication-inner">
+    <div class="authentication-inner" style="width: 40%; position: absolute;left: 30%;">
       <!-- Register -->
       <div class="card">
         <div class="card-body">
@@ -134,13 +134,13 @@
               <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
             </div>
           </form>
-            <div class="mb-3">
-              <form action="login" method="post">
-                <input type="hidden" value="google" name="type">
-                <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
-              </form>
+          <div class="mb-3">
+            <form action="login" method="post">
+              <input type="hidden" value="google" name="type">
+              <button class="btn btn-secondary d-grid w-100" type="submit">Sign in with google</button>
+            </form>
 
-            </div>
+          </div>
 
 
 
