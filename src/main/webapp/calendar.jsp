@@ -1,8 +1,12 @@
-<html>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
+  <title>Dashboard</title>
+  <!-- Favicon -->
 
 
   <!-- Fonts -->
@@ -15,30 +19,36 @@
 
   <!-- Icons. Uncomment required icon fonts -->
   <link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
-
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
   <!-- Core CSS -->
   <link rel="stylesheet" href="./assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="./assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="./assets/css/demo.css" />
+  <link rel="stylesheet" href="./assets/vendor/css/calendar.css" />
 
-  <!-- Vendors CSS -->
-  <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
+
+
 
   <!-- Page CSS -->
 
-  <!-- Helpers -->
-  <script src="./assets/vendor/js/helpers.js"></script>
+
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
-  <script>
-    function redirectToUpdateProfile() {
-      window.location.href = "/Update-user-profile";
+  <style>
+    .col-lg-4 {
+      flex: 0 0 auto;
+      width: 30%;
     }
-  </script>
+  </style>
 </head>
 <body>
 <div class="layout-wrapper layout-content-navbar">
@@ -76,7 +86,7 @@
             <i class='menu-icon tf-icons bx bxl-blogger' ></i>
           </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item active">
           <a href="/calendar" class="menu-link">
             <i class="menu-icon tf-icons bx bx-calendar"></i>
           </a>
@@ -148,67 +158,106 @@
           </ul>
         </div>
       </nav>
-      <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-          <!-- Menu -->
-          <!-- Ajoutez ici le code du menu si n�cessaire -->
-
-          <div class="layout-page">
-            <!-- Navbar -->
-            <!-- Ajoutez ici le code de la barre de navigation si n�cessaire -->
-
-            <div class="content-wrapper">
-              <!-- Content -->
-
-              <div class="container">
-                <div class="col-md-8 offset-2 col-xm-8 col-sm-8 ">
-                  <div class="card my-5">
-                    <div class="card-header">
-                      <span>Modification du profil</span>
-                    </div>
-                    <div class="card-body">
-                      <form action="Update-user-profile" method="post">
-
-                        <div class="form-group">
-                          <label class="label-control">Nom :</label>
-                          <input class="form-control" name="nom" placeholder="Entrer le nom" value="${user.nom}">
-                        </div>
-                        <div class="form-group">
-                          <label class="label-control">Pr�nom :</label>
-                          <input class="form-control" name="prenom" placeholder="Entrer le pr�nom" value="${user.prenom}">
-                        </div>
-                        <div class="form-group">
-                          <label class="label-control">E-mail :</label>
-                          <input class="form-control" name="email" placeholder="Entrer l'e-mail" value="${user.email}">
-                        </div>
-
-
-                        <!-- Ajouter d'autres propri�t�s du profil au besoin -->
-
-                        <button class="btn btn-primary" type="submit">Enregistrer</button>
-                        <button  class="btn btn-primary" type="button" onclick="cancelAction()">Annuler</button>
-
-                        <script>
-                          function cancelAction() {
-                            // Remplacez 'conseiller-servlet' par le chemin de votre page d'affichage de profil
-                            window.location.href = 'user-profile';
-                          }
-                        </script>
-                      </form>
-                    </div>
-                  </div>
+      <div class="content-wrapper">
+        <!-- Content -->
+        <div class="container">
+          <div class="left">
+            <div class="calendar">
+              <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">december 2015</div>
+                <i class="fas fa-angle-right next"></i>
+              </div>
+              <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="days"></div>
+              <div class="goto-today">
+                <div class="goto">
+                  <input type="text" placeholder="mm/yyyy" class="date-input" />
+                  <button class="goto-btn">Go</button>
                 </div>
+                <button class="today-btn">Today</button>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="today-date">
+              <div class="event-day">wed</div>
+              <div class="event-date">12th december 2022</div>
+            </div>
+            <div class="events"></div>
+            <div class="add-event-wrapper">
+              <div class="add-event-header">
+                <div class="title">Add Event</div>
+                <i class="fas fa-times close"></i>
+              </div>
+              <div class="add-event-body">
+                <form onsubmit="submitForm()">
+                <div class="add-event-input">
+                  <input type="text" placeholder="Event Name" class="event-name" name="eventName" />
+                </div>
+                <div class="add-event-input">
+                  <input
+                          type="text"
+                          placeholder="Event Time From"
+                          class="event-time-from"
+                          name="timeFrom"
+                  />
+                </div>
+                <div class="add-event-input">
+                  <input
+                          type="text"
+                          placeholder="Event Time To"
+                          class="event-time-to"
+                          name="timeTo"
+                  />
+                </div>
+                  <div class="add-event-footer">
+                    <button type="submit" class="add-event-btn">Add Event</button>
+                  </div>
+                </form>
               </div>
 
             </div>
-
           </div>
+          <button class="add-event">
+            Add Event
+          </button>
         </div>
+
+
+
       </div>
 
 
-      <script src="./assets/vendor/js/menu.js"></script>
-      <script src="./assets/vendor/js/bootstrap.js"></script>
+    </div>
+  </div>
+</div>
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+
+<script src="./assets/vendor/js/bootstrap.js"></script>
+
+<script src="./assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/script.js"></script>
+<!-- Page JS -->
+<!--<script src="./assets/js/dashboards-analytics.js"></script>-->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
 </html>
