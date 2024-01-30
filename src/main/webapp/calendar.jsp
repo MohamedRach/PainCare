@@ -34,7 +34,7 @@
 
 
 
-  <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
+
 
   <!-- Page CSS -->
 
@@ -64,7 +64,7 @@
 
       <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item">
           <a href="/dashboard" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
           </a>
@@ -84,6 +84,11 @@
         <li class="menu-item">
           <a href="/blog" class="menu-link ">
             <i class='menu-icon tf-icons bx bxl-blogger' ></i>
+          </a>
+        </li>
+        <li class="menu-item active">
+          <a href="/calendar" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-calendar"></i>
           </a>
         </li>
 
@@ -227,7 +232,7 @@
           </button>
         </div>
 
-        <script src="script.js"></script>
+
 
       </div>
 

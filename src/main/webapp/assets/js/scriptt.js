@@ -52,13 +52,11 @@ const months = [
 //         time: "11:00 AM",
 //       },
 //     ],
-//   },c
+//   },
 // ];
 
-var eventsArr = []
-getEvents();
-// Make an AJAX request to the Servlet
 
+//getEvents();
 console.log(eventsArr);
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
@@ -267,7 +265,7 @@ function updateEvents(date) {
         </div>`;
     }
     eventsContainer.innerHTML = events;
-
+    saveEvents();
 }
 
 //function to add event
@@ -406,7 +404,6 @@ function submitForm() {
 
     // Send the request with the form data
     xhr.send(formData);
-    return true
 }
 
 //function to delete event when clicked on event
@@ -449,17 +446,10 @@ function saveEvents() {
 //function to get events from local storage
 function getEvents() {
     //check if events are already saved in local storage then return event else nothing
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // Parse the JSON response as a JSONArray
-            var jsonArray = JSON.parse(xhr.responseText);
-            eventsArr = jsonArray;
-        }
-    };
-
-    xhr.open("GET", "/calendarData", true);
-    xhr.send();
+    if (localStorage.getItem("events") === null) {
+        return;
+    }
+    eventsArr.push(...JSON.parse(localStorage.getItem("events")));
 }
 
 function convertTime(time) {

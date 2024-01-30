@@ -1,25 +1,33 @@
 package com.example.paincare.servlets;
 
+import com.example.paincare.Bean.calendarBean;
+import com.example.paincare.dao.calendarDao.calendarDao;
+import com.example.paincare.dao.calendarDao.calendarDaoImpl;
+import com.example.paincare.dao.daoFacroty;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 @WebServlet(name = "calendar", value = "/calendar")
 public class calendar extends HttpServlet {
+
+    private calendarDao dao;
+    public void init(){
+        daoFacroty dao_Factory = daoFacroty.getInstance();
+        this.dao = new calendarDaoImpl(dao_Factory);
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String day = "28";
-        String month = "1";
-        String year = "2024";
-        String eventName = "gog";
-        String eventFrom = "12:00 PM";
-        String eventTo = "13:00 PM";
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("calendar.jsp");
         dispatcher.forward(request, response);
@@ -27,18 +35,23 @@ public class calendar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String day = request.getParameter("day");
-        String month = request.getParameter("month");
-        String year = request.getParameter("year");
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("id");
+        int day = Integer.parseInt(request.getParameter("day"));
+        int month = Integer.parseInt(request.getParameter("month"));
+        int year = Integer.parseInt(request.getParameter("year"));
         String eventName = request.getParameter("eventName");
         String eventFrom = request.getParameter("eventFrom");
         String eventTo = request.getParameter("eventTo");
-        System.out.println(year);
-        System.out.println(day);
-        System.out.println(month);
-        System.out.println(eventName);
-        System.out.println(eventFrom);
-        System.out.println(eventTo);
+        calendarBean event = new calendarBean();
+        event.setDay(day);
+        event.setMonth(month);
+        event.setYear(year);
+        event.setEventName(eventName);
+        event.setEventTo(eventTo);
+        event.setEventFrom(eventFrom);
+        event.setUser_id(userId);
+        dao.create(event);
         RequestDispatcher dispatcher = request.getRequestDispatcher("calendar.jsp");
         dispatcher.forward(request, response);
     }

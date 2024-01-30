@@ -75,7 +75,11 @@
                         <i class='menu-icon tf-icons bx bxl-blogger' ></i>
                     </a>
                 </li>
-
+                <li class="menu-item">
+                    <a href="/calendar" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-calendar"></i>
+                    </a>
+                </li>
 
             </ul>
         </aside>

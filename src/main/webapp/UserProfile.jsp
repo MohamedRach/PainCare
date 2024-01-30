@@ -64,7 +64,11 @@
                     </a>
                 </li>
 
-
+                <li class="menu-item">
+                    <a href="/calendar" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-calendar"></i>
+                    </a>
+                </li>
             </ul>
         </aside>
         <div class="layout-page">
